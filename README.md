@@ -6,6 +6,13 @@ you might experience some important emails being flagged as spam and not deliver
 This serverless application hosted in AWS Lambda monitors ImprovMX logs
 and sends undelivered email alerts to a Slack channel.
 
+```mermaid
+    graph TD;
+        A[CloudWatch Events] ---> B[Lambda Function]
+        C[ImprovMX API] --> B
+        B --> D[Slack API]
+```
+
 # Requirements
 
 * AWS Account (Free tier eligible)
