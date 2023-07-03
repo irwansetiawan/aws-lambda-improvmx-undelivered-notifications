@@ -1,0 +1,23 @@
+{
+  "name": "aws-lambda-improvmx-undelivered-notifications",
+  "version": "1.0.0",
+  "description": "If you sign up for ImprovMX email forwarding for your personal or business use, you might experience some important emails being flagged as spam and not delivered to your mailbox at all.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irwansetiawan/aws-lambda-improvmx-undelivered-notifications.git"
+  },
+  "keywords": [
+    "aws"
+  ],
+  "author": "irwan@thio.co",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/irwansetiawan/aws-lambda-improvmx-undelivered-notifications/issues"
+  },
+  "homepage": "https://github.com/irwansetiawan/aws-lambda-improvmx-undelivered-notifications#readme"
+}

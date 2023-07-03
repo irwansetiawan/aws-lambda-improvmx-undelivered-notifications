@@ -1,6 +1,6 @@
 // Add your domain name and ImprovMX API keys
 export const improvmxApiKeys = {
-    'example.com': 'sk_xxxxxxxxxxxxx',
+    'example.com': 'sk_xxxxxxx',
 };
 
 // Lookback window to search for undelivered emails

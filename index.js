@@ -1,5 +1,5 @@
 import https from 'https';
-import * as config from './config.mjs';
+import * as config from './config';
 
 export const handler = async(event) => {
     let domainLogs = {};
