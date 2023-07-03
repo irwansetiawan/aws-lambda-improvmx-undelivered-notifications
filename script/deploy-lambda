@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+./script/build
+
+# TODO: Update lambda my-function-name
+# assuming AWS CLI is already set up
+aws lambda update-function-code \
+    --function-name my-function-name \
+    --zip-file fileb://function-code.zip
+
