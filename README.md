@@ -15,7 +15,10 @@ and sends undelivered email alerts to a Slack channel.
 
 # Requirements
 
-* AWS Account (Free tier eligible)
-* ImprovMX Account (Free plan available)
+* [AWS](https://aws.amazon.com/) account (Free tier eligible). Services used:
+    - CloudWatch
+    - Lambda
+* [ImprovMX](https://improvmx.com/) account (Free plan available)
+* [Slack](https://slack.com/) workspace (Free plan available)
 
 # Setup
