@@ -7,8 +7,10 @@ This serverless application hosted in AWS Lambda monitors ImprovMX logs
 and sends undelivered email alerts to a Slack channel.
 
 ```mermaid
-    graph TD;
-        A[CloudWatch Events] ---> B[Lambda Function]
+    flowchart TD;
+        subgraph Amazon Web Services
+            A[CloudWatch Events] -->|Trigger| B[Lambda Function]
+        end
         C[ImprovMX API] --> B
         B --> D[Slack API]
 ```
