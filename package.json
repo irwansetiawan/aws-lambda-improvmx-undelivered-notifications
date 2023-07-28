@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/irwansetiawan/aws-lambda-improvmx-undelivered-notifications/issues"
   },
-  "homepage": "https://github.com/irwansetiawan/aws-lambda-improvmx-undelivered-notifications#readme"
+  "homepage": "https://github.com/irwansetiawan/aws-lambda-improvmx-undelivered-notifications#readme",
+  "dependencies": {
+    "improvmx-node-client": "^0.1.0"
+  }
 }

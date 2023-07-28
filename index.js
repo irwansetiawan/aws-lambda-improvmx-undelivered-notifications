@@ -1,5 +1,6 @@
 import https from 'https';
 import * as config from './config.js';
+import { ImprovMX } from 'improvmx-node-client';
 
 export const handler = async(event) => {
     let domainLogs = {};
@@ -7,32 +8,13 @@ export const handler = async(event) => {
 
     for (const domain in config.improvmxApiKeys) {
         const apiKey = config.improvmxApiKeys[domain];
+
+        const improvMx = new ImprovMX({ api_key: apiKey });
+        const logs = await improvMx.getLogsForDomain(domain)
         
-        const options = {
-            hostname: 'api.improvmx.com',
-            path: '/v3/domains/' + domain + '/logs',
-            headers: {
-                Authorization: 'Basic api:'+apiKey
-            }
-        }
-        
-        // TODO: implement cursor https://improvmx.com/api/#logs-list
-        const logStr = await new Promise((resolve) => {
-            https.get(options, (response) => {
-                var result = ''
-                response.on('data', function (chunk) {
-                    result += chunk;
-                });
-                response.on('end', function () {
-                    resolve(result);
-                });
-            });
-        });
-        
-        if (logStr) {
-            const dLog = JSON.parse(logStr);
+        if (logs) {
             
-            for (const log of dLog.logs) {
+            for (const log of logs) {
                 // Skip logs older than the lookback period
                 if (log.created < new Date().getTime() - config.logLookbackPeriod) continue;
                 
