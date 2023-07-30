@@ -6,4 +6,4 @@ cd "$(dirname "$0")/.."
 
 ./script/bootstrap
 
-zip -r function-code.zip .
+zip -r function-code.zip . -x .git/**\*
