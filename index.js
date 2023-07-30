@@ -45,7 +45,9 @@ export const handler = async(event) => {
             }
             const d = new Date(log.created);
             slackContent += '* [' + new Date(log.created).toDateString() + '] ' + 
-                            ' *' + log.subject + '* from `' + log.sender.email + '`' +
+                            '*' + log.subject + '* '+
+                            'from `' + log.sender.email + '` ' +
+                            'to `' + log.recipient.email + '` ' +
                             ' <' + log.url + '|download>' +
                             '\n';
         }
