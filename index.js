@@ -21,10 +21,10 @@ export const handler = async(event) => {
                 domainLogs[domain] = domainLogs[domain] || [];
                 domainLogs[domain].push(log);
                 
-                let failed = false;
+                let failed = true;
                 for (const event of log.events) {
-                    if (!['QUEUED', 'DELIVERED'].includes(event.status)) {
-                        failed = true;
+                    if (event.status === 'DELIVERED') {
+                        failed = false;
                     }
                 }
                 if (failed) {
